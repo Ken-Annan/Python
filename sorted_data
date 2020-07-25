@@ -1,0 +1,7 @@
+import pandas as pd
+import numpy as np
+excel_file_path = 'file_location.xlsx'
+
+df = pd.read_excel(excel_file_path)
+result = df.sort_values(['excel_header1']  +  ['excel_header2'])
+print(result)
