@@ -1,0 +1,15 @@
+import pandas as pd
+
+
+excel_file_path = 'Your_file_Path_here'
+df = pd.read_excel(excel_file_path)
+
+commented out because it was used for testing purposes
+#print(df.head(2))
+
+df['column name'] = df['column name'].str.replace(r'character you would like to remove', "")
+df['column name'] = df['column name'].str.replace(r'character you would like to remove', "")
+df['column name'] = df['column name'].str.replace(r' ', "")
+print(df)
+#print(df1)
+df.to_excel("cleaned_up_data.xlsx")
