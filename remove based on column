@@ -1,0 +1,12 @@
+import os
+import pandas as pd
+
+excel_workbook = 'OpeningSession.xlsx'
+
+df = pd.read_excel(excel_workbook, sheet_name='Sheet1')
+print(df.head(10))
+#df[column] = df[column].str.replace(r'[Â]', "")
+
+idx = df[df['Attended']=='First Name'].index[0]
+df = df[idx+1]
+print(df)
