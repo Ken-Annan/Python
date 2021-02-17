@@ -1,0 +1,28 @@
+import pandas as pd
+import os
+import datetime
+from datetime import datetime, timedelta
+filename = datetime.now()
+print (filename)
+
+excel_file_path = 'Desert_Botanical_Garden_02_05_2021.xlsx'
+df = pd.read_excel(excel_file_path)
+#print(df)
+
+column_name_list = df['NAME.COMPANY'][1]
+print(column_name_list)
+
+name = column_name_list + "_" + "roster" + "_" + filename.strftime("%B_%d_%Y")
+name.to_excel
+
+
+#name.to_excel("%s.xlsx" % name)
+
+#df.to_Excel = (df.loc[0, 'NAME.COMPANY'])
+#for column in df:
+    #for NAME.COMPANY in NAME.COMPANY:
+        #if column[0] == (df.loc[0, 'Your column name here']):
+            #with pd.ExcelWriter("Your File name here.xlsx") as writer:
+                #for NAME.COMPANY, data in df.groupby('Your column name her'):
+                    #print('Your column name her')
+                    #data.to_excel(writer, sheet_name = Your column name her)
