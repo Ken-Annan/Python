@@ -1,34 +1,29 @@
-import csv, os, slack # import statements
+import pandas as pd
+import os
+import datetime
+import tkinter as tk
+from datetime import datetime, timedelta
+from tkinter import *
+from tkinter import filedialog
 
-# read csv with ip addresses
-with open('test.csv') as csvfile:
-    reader = csv.reader(csvfile,delimiter=',')
-    # convert it to a list
-    new_list = list(reader)
-    # remove the first element in the list
-    new_list.pop(0)
-    output = ''
-    # loop through csv list
-    for row in new_list:
-        ip_addr = row[0]
-        # ping each server
-        resp = os.system("ping -c 0 " + ip_addr)
-        if resp == 0:
-            output += ip_addr + ', is up!\n'
-        else:
-            output += ip_addr + ', is down!\n'
+root = tk.Tk()
+root.withdraw()
+filename = datetime.now()
+print (filename)
 
-# open csv for writing
-with open('output.csv','w', newline='') as fd:
-    fd.write(output)
+open_file = filedialog.askopenfilename()
+opened_file = open_file
+df = opened_file
+column_select = df['COLUMN NAME']
+columns = df[column_select]
+print(columns)
+
+date = filename.strftime("%B_%d_%Y")
+print(date)
+for value in columns:
+    df1 = df[df[column_select] == value]
+    output_file_name = str(value) + "_" + date  + "roster" + "_" + ".xlsx"
+    df1.to_excel(output_file_name, index=False)
 
 
-# define parameters for slack
-url = "slack URL"
-headers = {
-    'Content-Type': "application/json",
-    'cache-control': "no-cache"
-    }
 
-# call slack function
-slack.slack('output.csv', url, headers)
