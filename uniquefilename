@@ -1,0 +1,74 @@
+from docx import Document
+
+document = Document ()
+import datetime
+filename = datetime.datetime.now()
+
+import docx
+from datetime import datetime
+
+doc = docx.Document()
+doc.add_heading('Monday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_heading('Tuesday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_heading('Wednesday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_heading('Thursday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_heading('Friday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+
+doc.add_heading('Monday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_heading('Tuesday', 1)
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+doc.add_paragraph(' ', style='List Bullet')
+
+
+# will create unique file name and add the date.
+name = "weekly_tasks" + "_" + filename.strftime("%B_%d_%Y")
+filename = "%s.docx" % name
+print(filename)
+
+#def create_file(filename):
+	#with open("weekly_tasks" + " " + filename.strftime("%d %B %Y") + ".docx", "w") as file:
+	#DEST_file = (f'filelocation" + " " + filename.strftime("%d %B %Y").docx')
+
+
+#create_file(filename)
+doc.save(filename)
